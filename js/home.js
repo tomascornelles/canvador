@@ -1,5 +1,6 @@
 import { database, get } from './db.js'
 import {$} from './utils.js'
+import {layout} from './layouts.js'
 
 export const home = () => {
 
@@ -9,12 +10,7 @@ export const home = () => {
   }
 
   const _printLayout = () => {
-    let template = `
-      <section>
-        <a href="/dm">dm</a><br>
-        <input type="text" placeholder="Escribe" class="js-input">
-      </section>
-    `
+    let template = layout.home('texto')
 
     document.querySelector('canvador-app').innerHTML = template
 
