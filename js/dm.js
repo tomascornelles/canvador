@@ -1,18 +1,17 @@
 import { database, get } from './db.js'
 import {$} from './utils.js'
 
-export const home = () => {
+export const dm = () => {
 
   const _init = () => {
-    console.log('Init home')
+    console.log('Init DM')
     _printLayout()
   }
 
   const _printLayout = () => {
     let template = `
       <section>
-        <a href="/dm">dm</a><br>
-        <input type="text" placeholder="Escribe" class="js-input">
+        <input type="text" placeholder="Escribe DM" class="js-input">
       </section>
     `
 
