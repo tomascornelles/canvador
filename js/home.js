@@ -1,25 +1,27 @@
-import { database, get } from './db.js'
-import {$} from './utils.js'
-import {layout} from './layouts.js'
+import { $ } from './utils.js'
+import { layouts } from './layouts.js'
+import { db } from './config/db.js'
 
 export const home = () => {
-
+  // initial function
   const _init = () => {
-    console.log('Init home')
     _printLayout()
   }
 
   const _printLayout = () => {
-    let template = layout.home('texto')
+    let template = layouts.home('texto')
 
-    document.querySelector('canvador-app').innerHTML = template
+    $('canvador-app').innerHTML = template
 
-    let inputs = $('.js-input')
-    inputs.forEach(function(input) {
-      input.addEventListener('keyup', function () {
-        console.log(this.value)
-      })
+    $('.js-input').addEventListener('keyup', function () {
+      console.log(this.value)
     })
+
+    let p = $('p', true)
+    p.forEach(element => {
+      element.innerHTML = 'Echo!!'
+    })
+    db.print('p', 'test')
   }
 
   _init()

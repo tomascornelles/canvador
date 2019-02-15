@@ -1,8 +1,6 @@
-import { database, get } from './db.js'
-import {$} from './utils.js'
+import { $ } from './utils.js'
 
 export const dm = () => {
-
   const _init = () => {
     console.log('Init DM')
     _printLayout()
@@ -18,7 +16,7 @@ export const dm = () => {
     document.querySelector('canvador-app').innerHTML = template
 
     let inputs = $('.js-input')
-    inputs.forEach(function(input) {
+    inputs.forEach(function (input) {
       input.addEventListener('keyup', function () {
         console.log(this.value)
       })
