@@ -1,6 +1,6 @@
-import { $ } from './utils.js'
-import { layouts } from './layouts.js'
-import { db } from './config/db.js'
+import { $ } from '../utils.js'
+import { layouts } from '../layouts.js'
+import { db } from '../config/db.js'
 
 export const home = () => {
   // initial function

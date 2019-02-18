@@ -1,10 +1,10 @@
 import { config } from './config.js'
 import { es } from './es.js'
+import { en } from './en.js'
+
 const idioma = {
-  es: es
-}
-export const setLang = (lang) => {
-  config.lang = lang
+  es: es,
+  en: en
 }
 
 export const lang = idioma[config.lang]

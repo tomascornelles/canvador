@@ -1,4 +1,5 @@
-import { $ } from './utils.js'
+import { $ } from '../utils.js'
+import { lang } from '../config/lang.js'
 
 export const dm = () => {
   const _init = () => {
@@ -9,14 +10,15 @@ export const dm = () => {
   const _printLayout = () => {
     let template = `
       <section>
+        <h2>${lang.title}</h2>
+        <a href="/">Inicio</a><br>
         <input type="text" placeholder="Escribe DM" class="js-input">
       </section>
     `
 
     document.querySelector('canvador-app').innerHTML = template
 
-    let inputs = $('.js-input')
-    inputs.forEach(function (input) {
+    $('.js-input', true).forEach(function (input) {
       input.addEventListener('keyup', function () {
         console.log(this.value)
       })

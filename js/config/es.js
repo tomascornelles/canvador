@@ -1,3 +1,3 @@
 export const es = {
-  title: 'Canvador'
+  title: 'Canvador ES'
 }
