@@ -1,3 +1,4 @@
+
 export const access = {
   login: (user, pass) => {
     window.sessionStorage.setItem('user', user)
@@ -5,7 +6,8 @@ export const access = {
   logout: (user) => {
     window.sessionStorage.removeItem('user')
   },
-  isLogged: (user) => {
+  isLogged: () => {
+    console.log((!window.sessionStorage.getItem('user')))
     if (!window.sessionStorage.getItem('user')) window.location.replace('/login')
   }
 }
