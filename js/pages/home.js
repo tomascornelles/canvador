@@ -1,10 +1,12 @@
 import { $ } from '../utils.js'
 import { layouts } from '../layouts.js'
 import { db } from '../config/db.js'
+import { access } from '../components/access.js'
 
 export const home = () => {
   // initial function
   const _init = () => {
+    access.isLogged('yo')
     _printLayout()
   }
 

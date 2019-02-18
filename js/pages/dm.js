@@ -1,9 +1,11 @@
 import { $ } from '../utils.js'
 import { lang } from '../config/lang.js'
+import { access } from '../components/access.js'
 
 export const dm = () => {
   const _init = () => {
     console.log('Init DM')
+    access.logout('yo')
     _printLayout()
   }
 
@@ -16,7 +18,7 @@ export const dm = () => {
       </section>
     `
 
-    document.querySelector('canvador-app').innerHTML = template
+    $('canvador-app').innerHTML = template
 
     $('.js-input', true).forEach(function (input) {
       input.addEventListener('keyup', function () {
