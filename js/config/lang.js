@@ -6,5 +6,13 @@ const idioma = {
   es: es,
   en: en
 }
+let currentLang = (window.sessionStorage.getItem('lang')) 
+  ? window.sessionStorage.getItem('lang')
+  : 'es'
 
-export const lang = idioma[config.lang]
+export const lang = idioma[currentLang]
+
+export const setLang = (l) => {
+  window.sessionStorage.setItem('lang', l)
+  return lang
+}

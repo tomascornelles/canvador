@@ -1,10 +1,14 @@
 import { $ } from '../utils.js'
-import { lang } from '../config/lang.js'
+import { lang, setLang } from '../config/lang.js'
+import { header } from './_header.js'
+import { database } from '../config/db.js'
 
 export const dm = () => {
   const _init = () => {
-    console.log('Init DM')
-    _printLayout()
+    database.ref('/users/dm/lang').on('value', function (snapshot) {
+      setLang(snapshot.val())
+      _printLayout()
+    })
   }
 
   const _printLayout = () => {
@@ -16,7 +20,7 @@ export const dm = () => {
       </section>
     `
 
-    $('canvador-app').innerHTML = template
+    $('.page').innerHTML = header + template
 
     $('.js-input', true).forEach(function (input) {
       input.addEventListener('keyup', function () {

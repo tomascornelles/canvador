@@ -2,6 +2,7 @@ import { $ } from '../utils.js'
 import { lang } from '../config/lang.js'
 import { db } from '../config/db.js'
 import { access } from '../components/access.js'
+import { header } from './_header.js'
 
 export const home = () => {
   const _init = () => {
@@ -21,7 +22,7 @@ export const home = () => {
       </section>
     `
 
-    $('canvador-app').innerHTML = template
+    $('.page').innerHTML = header + template
 
     $('.js-input').addEventListener('keyup', function () {
       console.log(this.value)
