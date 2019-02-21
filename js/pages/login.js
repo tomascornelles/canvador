@@ -103,12 +103,12 @@ export const login = () => {
           } else {
             database.ref('users/' + user).set({
               pass: pass
-            });
+            })
           }
         })
       } else {
         _printNewUser(lang.login.errorPass2)
-      }      
+      }
     } else {
       _printNewUser(lang.login.errorValidator)
     }

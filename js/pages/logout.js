@@ -6,6 +6,5 @@ export const logout = () => {
     page('/')
   }
 
-
   _init()
 }

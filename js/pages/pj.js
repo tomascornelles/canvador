@@ -1,5 +1,5 @@
 import { $ } from '../utils.js'
-import { lang , setLang} from '../config/lang.js'
+import { lang, setLang } from '../config/lang.js'
 import { header } from './_header.js/'
 import { database } from '../config/db.js'
 
@@ -17,7 +17,7 @@ export const pj = (response) => {
       <h2 className="title">${pj}</h2>
       <p>${lang.title}</p>
     `
-console.log(lang)
+    console.log(lang)
     $('.page').innerHTML = header + template
   }
 
