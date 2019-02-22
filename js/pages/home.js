@@ -1,12 +1,10 @@
 import { $ } from '../utils.js'
 import { lang } from '../config/lang.js'
 import { db } from '../config/db.js'
-import { access } from '../components/access.js'
 import { header } from './_header.js'
 
 export const home = () => {
   const _init = () => {
-    access.isLogged()
     _printLayout()
   }
 

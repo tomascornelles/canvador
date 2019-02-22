@@ -1,6 +1,8 @@
+import { $ } from '../utils'
+
 export const notfound = () => {
   const _init = () => {
-    console.log('404')
+    $('.page').innerHTML = '<h1>404</h1>'
   }
 
   _init()
