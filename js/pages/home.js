@@ -12,10 +12,10 @@ export const home = () => {
     let template = `
       <section>
         <h2>${lang.title}</h2>
-        <a href="/dm">DM</a><br>
-        <input type="text" placeholder="texto" class="js-input">
+        <a href="/dm" class="nes-btn">DM</a><br>
+        <input type="text" placeholder="texto"  class="nes-input js-login-user js-input">
         <p></p>
-        <p></p>
+        <p class="js-name"></p>
         <p></p>
       </section>
     `
@@ -30,7 +30,7 @@ export const home = () => {
     p.forEach(element => {
       element.innerHTML = 'Echo!!'
     })
-    db.print('p', 'test')
+    db.print('.js-name', 'mondino', 'name')
   }
 
   _init()

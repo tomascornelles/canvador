@@ -131,3 +131,15 @@ export const login = () => {
 
   _init()
 }
+
+export const isLogged = (user) => {
+  if (window.sessionStorage.getItem('user') === user) {
+    return true
+  } else if (window.sessionStorage.getItem('user') !== null) {
+    page('/' + window.sessionStorage.getItem('user'))
+    return false
+  } else {
+    page('/login')
+    return false
+  }
+}
