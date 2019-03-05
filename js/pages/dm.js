@@ -5,8 +5,8 @@ import { isLogged } from './login.js'
 import { printChat, saveMsg } from './_chat.js'
 
 export const dm = () => {
-  const _init = (user) => {
-    if (isLogged(user)) {
+  const _init = () => {
+    if (isLogged('dm')) {
       _printLayout()
     }
   }
@@ -36,5 +36,5 @@ export const dm = () => {
     })
   }
 
-  _init('dm')
+  _init()
 }
