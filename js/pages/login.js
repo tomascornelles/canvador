@@ -23,8 +23,8 @@ export const login = () => {
             <label for="pass">${lang.login.pass}</label>
             <input type="password" id="pass" data-validator="password" class="nes-input js-login-pass"></div>
           <br>
-          <button class="nes-btn is-primary">${lang.login.submit}</button>
-          <button class="nes-btn js-login-new">${lang.login.new}</button>
+          <button class="btn">${lang.login.submit}</button>
+          <button class="btn js-login-new">${lang.login.new}</button>
         </form>
       </section>
     `
@@ -45,7 +45,7 @@ export const login = () => {
         console.log(snapshot.val() === pass)
         if (snapshot.val() === pass) {
           window.sessionStorage.setItem('user', user)
-          page('/' + user)
+          page('/user/' + user)
         } else {
           _printLogin(lang.login.error)
         }
@@ -92,7 +92,6 @@ export const login = () => {
       let pass2 = $('.js-login-pass2').value
       if (pass === pass2) {
         database.ref('/users/' + user).on('value', function (snapshot) {
-          console.log(snapshot.val())
           if (snapshot.val() !== null) {
             if (snapshot.val().pass === pass) {
               window.sessionStorage.setItem('user', user)

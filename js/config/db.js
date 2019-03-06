@@ -21,14 +21,20 @@ export let database = firebase.database()
  * FUNCTIONS
  */
 
-// printer
 export const db = {
-  print: (selector, pj, elem) => {
+  get: (query, callback, options) => {
+    database.ref(query).on('value', function (snapshot) {
+      if (typeof callback !== 'undefined' && typeof options !== 'undefined') {
+        callback(snapshot.val(), options)
+      } else if (typeof callback !== 'undefined') {
+        callback(snapshot.val())
+      }
+    })
+  },
+  print: (value, selector) => {
     var s = $(selector, true)
-    database.ref('/pjs/' + pj + '/' + elem).on('value', function (snapshot) {
-      s.forEach(function (e) {
-        e.innerHTML = snapshot.val()
-      })
+    s.forEach(function (e) {
+      e.innerHTML = value
     })
   }
 }

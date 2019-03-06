@@ -1,0 +1,67 @@
+$shadow-width: $outline-width;
+$shadow-color:  rgba(0,0,0,.2);
+
+$button-background: $color_principal;
+
+.btn {
+  background: $button-background;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none; 
+  color: $color04;
+  box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+  text-shadow: (-$shadow-width/2) (-$shadow-width/2) 0px $shadow-color;
+
+  &:hover,
+  &:focus {
+    background: lighten($button-background, 10%);
+    box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $shadow-color;
+  }
+
+  &:active {
+    background: darken($button-background, 10%);
+    box-shadow: inset $shadow-width $shadow-width 0px 0px $shadow-color;
+  }
+
+  border: $shadow-width solid $color01;
+
+  &--success {
+    background: $color15;
+    &:hover,
+    &:focus {
+      background: lighten($color15, 10%);
+    }
+    &:active {
+      background: darken($color15, 10%);
+    }
+  }
+
+  &--warning {
+    background: $color06;
+    &:hover,
+    &:focus {
+      background: lighten($color06, 10%);
+    }
+    &:active {
+      background: darken($color06, 10%);
+    }
+  }
+
+  &--error {
+    background: $color10;
+    &:hover,
+    &:focus {
+      background: lighten($color10, 10%);
+    }
+    &:active {
+      background: darken($color10, 10%);
+    }
+  }
+}
+
+
+
