@@ -5,13 +5,12 @@ export const $ = (elem, a) => {
   else return document.querySelector(elem)
 }
 
-export const changetab = (tab) => {
-  $('.js-tab-content', true).forEach(jsTabContent => {
+export const changetab = (tab, group) => {
+  $(group + '-content', true).forEach(jsTabContent => {
     jsTabContent.classList.add('hidden')
   })
-  console.log(tab)
   $('#' + tab.dataset.tab).classList.remove('hidden')
-  $('.js-tab', true).forEach(jsTab => {
+  $(group, true).forEach(jsTab => {
     jsTab.classList.remove('tab--active')
   })
   tab.classList.add('tab--active')

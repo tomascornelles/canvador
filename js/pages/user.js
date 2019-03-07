@@ -35,7 +35,7 @@ export const user = (response) => {
 
     $('.tab', true).forEach(tab => {
       tab.addEventListener('click', function () {
-        changetab(tab)
+        changetab(tab, '.js-tab')
       })
     })
 
