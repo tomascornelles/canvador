@@ -1,10 +1,5 @@
-$shadow-width: $outline-width;
-$shadow-color:  rgba(0,0,0,.2);
-
-$button-background: $color_principal;
-
 .btn {
-  background: $button-background;
+  background: $color_bg;
   display: inline-block;
   position: relative;
   text-align: center;
@@ -12,53 +7,69 @@ $button-background: $color_principal;
   padding: 1rem 2rem;
   font-family: 'Press Start 2P', cursive;
   text-decoration: none; 
-  color: $color04;
-  box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
-  text-shadow: (-$shadow-width/2) (-$shadow-width/2) 0px $shadow-color;
+  color: $color_fg;
+  box-shadow: inset (-$shadow_width) (-$shadow_width) 0px 0px $color_shadow;
+  text-shadow: (-$shadow_width/2) (-$shadow_width/2) 0px $color_shadow;
+  cursor: pointer;
 
   &:hover,
   &:focus {
-    background: lighten($button-background, 10%);
-    box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $shadow-color;
+    background: lighten($color_bg, 10%);
+    box-shadow: inset (-$shadow_width*1.5) (-$shadow_width*1.5) 0px 0px $color_shadow;
   }
 
   &:active {
-    background: darken($button-background, 10%);
-    box-shadow: inset $shadow-width $shadow-width 0px 0px $shadow-color;
+    background: darken($color_bg, 10%);
+    box-shadow: inset $shadow_width $shadow_width 0px 0px $color_shadow;
   }
 
-  border: $shadow-width solid $color01;
+  border: $shadow_width solid $color_fg;
 
-  &--success {
-    background: $color15;
+  &--principal {
+    background: $color_principal;
+    color: lighten($color_principal, 50%);
     &:hover,
     &:focus {
-      background: lighten($color15, 10%);
+      background: lighten($color_principal, 10%);
     }
     &:active {
-      background: darken($color15, 10%);
+      background: darken($color_principal, 10%);
+    }
+  }
+  
+  &--success {
+    background: $color_success;
+    color: lighten($color_success, 50%);
+    &:hover,
+    &:focus {
+      background: lighten($color_success, 10%);
+    }
+    &:active {
+      background: darken($color_success, 10%);
     }
   }
 
   &--warning {
-    background: $color06;
+    background: $color_warning;
+    color: lighten($color_warning, 50%);
     &:hover,
     &:focus {
-      background: lighten($color06, 10%);
+      background: lighten($color_warning, 10%);
     }
     &:active {
-      background: darken($color06, 10%);
+      background: darken($color_warning, 10%);
     }
   }
 
-  &--error {
-    background: $color10;
+  &--danger {
+    background: $color_danger;
+    color: lighten($color_danger, 50%);
     &:hover,
     &:focus {
-      background: lighten($color10, 10%);
+      background: lighten($color_danger, 10%);
     }
     &:active {
-      background: darken($color10, 10%);
+      background: darken($color_danger, 10%);
     }
   }
 }

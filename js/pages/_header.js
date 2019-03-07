@@ -1,6 +1,13 @@
 import { lang } from '../config/lang.js'
+import { isLogged } from './login.js'
 
-export const header = `
-    <a href="/logout" class="nes-btn is-error float-right" title="${lang.login.logout}"><i class="nes-icon close is-small"></i></a>
-    <h1><a href="/">Canvador</a></h1>
+export const header = () => {
+  let logout = ''
+  if (isLogged()) {
+    logout = `<a href="/logout" class="btn btn--danger float--right" title="${lang.login.logout}">${lang.login.logout}</a>`
+  }
+  return `
+    ${logout}
+    <h1><a href="/">${lang.title}</a></h1>
   `
+}

@@ -3,6 +3,8 @@ html {
 }
 body {
   font-family: 'Press Start 2P', cursive;
+  background: $color_bg;
+  color: $color_fg;
 }
 h1 {
   font-size: $font_base*2.5;
@@ -21,4 +23,21 @@ h5 {
 }
 h6 {
   font-size: $font_base*1.1;
+}
+img {
+  max-width: 100%;
+}
+a {
+  color: $color_principal;
+}
+
+.container {
+  background: $color_bg;
+  color: $color_fg;
+
+  &--border {
+    border: $outline_width solid $color_fg;
+    padding: ($outline_width*5);
+    box-shadow: $outline_width $outline_width 0 0 $color_shadow;
+  }
 }

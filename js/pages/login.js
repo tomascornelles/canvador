@@ -23,13 +23,13 @@ export const login = () => {
             <label for="pass">${lang.login.pass}</label>
             <input type="password" id="pass" data-validator="password" class="nes-input js-login-pass"></div>
           <br>
-          <button class="btn">${lang.login.submit}</button>
-          <button class="btn js-login-new">${lang.login.new}</button>
+          <button class="btn btn--principal">${lang.login.submit}</button>
+          <a class="btn float-right js-login-new">${lang.login.new}</a>
         </form>
       </section>
     `
 
-    $('.page').innerHTML = header + template
+    $('.page').innerHTML = header() + template
 
     $('.js-login-new').addEventListener('click', _printNewUser)
     $('.js-login-form').addEventListener('submit', _submitLogin)
@@ -132,13 +132,21 @@ export const login = () => {
 }
 
 export const isLogged = (user) => {
-  if (window.sessionStorage.getItem('user') === user) {
-    return true
-  } else if (window.sessionStorage.getItem('user') !== null) {
-    page('/' + window.sessionStorage.getItem('user'))
-    return false
+  if (typeof user !== 'undefined') {
+    if (window.sessionStorage.getItem('user') === user) {
+      return true
+    } else if (window.sessionStorage.getItem('user') !== null) {
+      page('/user/' + window.sessionStorage.getItem('user'))
+      return false
+    } else {
+      page('/login')
+      return false
+    }
   } else {
-    page('/login')
-    return false
+    if (window.sessionStorage.getItem('user')) {
+      return true
+    } else {
+      return false
+    }
   }
 }

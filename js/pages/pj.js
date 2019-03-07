@@ -20,7 +20,7 @@ export const pj = (response) => {
         <div class="js-chat message-list"></div>
       </div>
     `
-    $('.page').innerHTML = header + template
+    $('.page').innerHTML = header() + template
 
     printChat('test', pj)
   }

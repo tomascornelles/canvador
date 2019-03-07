@@ -1,0 +1,21 @@
+.float {
+  &--right {
+    float: right;
+  }
+  &--left {
+    float: left;
+  }
+}
+.hidden {
+  display: none;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+.btn.close {
+  padding: 0.5rem 1rem;
+  &:before {
+    content: '✖';
+    font-size: 2rem;
+  }
+}

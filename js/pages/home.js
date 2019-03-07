@@ -9,6 +9,7 @@ export const home = () => {
 
   const _printLayout = () => {
     let template = `
+      <h1><a href="/">${lang.title}</a></h1>
       <section>
         <h1>Test H1</h1>
         <h2>Test H2</h2>
@@ -23,8 +24,7 @@ export const home = () => {
       </section>
     `
 
-    $('.page').innerHTML = header + template
-
+    $('.page').innerHTML = header() + template
   }
 
   _init()

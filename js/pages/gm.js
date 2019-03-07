@@ -30,7 +30,7 @@ export const gm = () => {
       <p class="js-name"></p>
     `
 
-    $('.page').innerHTML = header + template
+    $('.page').innerHTML = header() + template
 
     printChat('test', 'gm')
 
