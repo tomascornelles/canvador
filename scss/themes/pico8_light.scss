@@ -15,18 +15,14 @@ $color13: #29ADFF;
 $color14: #1D2B53;
 $color15: #008751;
 $color16: #00E436;
-
 $color_principal: $color08;
 $color_success: $color15;
 $color_warning: $color06;
 $color_danger: $color10;
-
 $color_bg: $color04;
 $color_fg: $color01;
-
-$color_shadow:  rgba(0,0,0,.2);
-
+$color_shadow: rgba(0, 0, 0, .2);
 // Sizes
-$font_base: 10px;
+$font_base: 9px;
 $outline_width: ($font_base/5);
 $shadow_width: $outline_width;

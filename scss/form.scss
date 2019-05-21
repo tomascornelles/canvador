@@ -23,3 +23,6 @@ input[type=password] {
     outline: $shadow-width solid $color_fg;
   }
 }
+.form-field {
+  margin-bottom: 1rem;
+}
