@@ -2,7 +2,7 @@
   .message {
     border: $shadow-width solid $color_fg;
     box-shadow: ($shadow-width) ($shadow-width) 0px 0px $shadow-color;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     padding: 0.5rem;
 
     &.is--dark {
