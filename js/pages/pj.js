@@ -1,7 +1,7 @@
 import { $ } from '../utils.js'
 import { lang } from '../config/lang.js'
 import { header } from './_header.js'
-import { printChat, saveMessage } from './_chat.js'
+import { printChat } from './_chat.js'
 import { isLogged } from './login.js'
 
 export const pj = (response) => {
@@ -25,7 +25,6 @@ export const pj = (response) => {
     $('.page').innerHTML = header() + template
 
     $('.js-chat-input').addEventListener('submit', function () {
-      console.log(campaign, pj, pj.name, this.value)
     })
     printChat('test', pj)
   }
