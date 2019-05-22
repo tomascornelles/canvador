@@ -1,0 +1,39 @@
+.message-list {
+  .message {
+    border: $shadow-width solid $color_fg;
+    box-shadow: ($shadow-width) ($shadow-width) 0px 0px $shadow-color;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+
+    &.is--dark {
+      background: $color_fg;
+      color: $color_bg;
+    }
+
+    &.is--right {
+      margin-left: 5rem;
+      text-align: right;
+    }
+
+    &.is--left {
+      margin-right: 5rem;
+    }
+
+    .user {
+      opacity: .6;
+    }
+  }
+  .delete-btn {
+    float: right;
+    font-size: 2rem;
+    padding: 0.8rem;
+    margin: -4rem -.5rem;
+    color: lighten($color_danger, 50%);
+    background: $color_danger;
+    box-shadow: ($shadow-width) ($shadow-width) 0px 0px $shadow-color;
+    cursor: pointer;
+  }
+  .message.is--left + .delete-btn {
+    margin-right: 4.2rem;
+  }
+}

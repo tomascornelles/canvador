@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  // font-family: 'Press Start 2P', cursive;
   font-family: 'Press Start 2P', cursive;
   background: $color_bg;
   color: $color_fg;
@@ -38,6 +39,10 @@ img {
 
 a {
   color: $color_principal;
+}
+
+p {
+  line-height: 1.8;
 }
 
 .content {

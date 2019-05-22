@@ -24,7 +24,7 @@ export const user = (response) => {
         <h3 class="title">Ficha</h3>
       </div>
       <div class="container container--border js-tab-content hidden" id="chat">
-        <h3 class="title">Chat</h3>
+        <form><input type="text" class="js-chat-input"></form>
         <div class="js-chat message-list"></div>
       </div>
       <div class="container container--border js-tab-content hidden" id="lista">
@@ -32,6 +32,12 @@ export const user = (response) => {
       </div>
     `
     $('.page').innerHTML = header() + template
+
+    $('.js-chat-input').addEventListener('keyup', function (e) {
+      e.preventDefault()
+      console.log(user, this.value)
+      return false
+    })
 
     $('.tab', true).forEach(tab => {
       tab.addEventListener('click', function () {
