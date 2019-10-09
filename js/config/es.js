@@ -13,5 +13,6 @@ export const es = {
     new: 'Nuevo usuario',
     exist: 'Ya tengo un usuario',
     logout: 'Cerrar sesión'
-  }
+  },
+  chat: 'Chat'
 }

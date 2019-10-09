@@ -1,0 +1,77 @@
+.btn {
+  background: $color_bg;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  text-decoration: none; 
+  color: $color_fg;
+  box-shadow: inset (-$shadow_width) (-$shadow_width) 0px 0px $color_shadow;
+  text-shadow: (-$shadow_width/2) (-$shadow_width/2) 0px $color_shadow;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: lighten($color_bg, 10%);
+    box-shadow: inset (-$shadow_width*1.5) (-$shadow_width*1.5) 0px 0px $color_shadow;
+  }
+
+  &:active {
+    background: darken($color_bg, 10%);
+    box-shadow: inset $shadow_width $shadow_width 0px 0px $color_shadow;
+  }
+
+  border: $shadow_width solid $color_fg;
+
+  &--principal {
+    background: $color_principal;
+    color: lighten($color_principal, 50%);
+    &:hover,
+    &:focus {
+      background: lighten($color_principal, 10%);
+    }
+    &:active {
+      background: darken($color_principal, 10%);
+    }
+  }
+  
+  &--success {
+    background: $color_success;
+    color: lighten($color_success, 50%);
+    &:hover,
+    &:focus {
+      background: lighten($color_success, 10%);
+    }
+    &:active {
+      background: darken($color_success, 10%);
+    }
+  }
+
+  &--warning {
+    background: $color_warning;
+    color: lighten($color_warning, 50%);
+    &:hover,
+    &:focus {
+      background: lighten($color_warning, 10%);
+    }
+    &:active {
+      background: darken($color_warning, 10%);
+    }
+  }
+
+  &--danger {
+    background: $color_danger;
+    color: lighten($color_danger, 50%);
+    &:hover,
+    &:focus {
+      background: lighten($color_danger, 10%);
+    }
+    &:active {
+      background: darken($color_danger, 10%);
+    }
+  }
+}
+
+
+

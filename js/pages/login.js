@@ -10,26 +10,26 @@ export const login = () => {
   }
 
   const _printLogin = (errorMsg) => {
-    let msg = (typeof errorMsg === 'string') ? `<p class="nes-text is-error">${errorMsg}</p>` : ''
+    let msg = (typeof errorMsg === 'string') ? `<p class="is-error">${errorMsg}</p>` : ''
     let template = `
-      <section class="nes-container with-title">
+      <section class="content">
         <h2 class="title">${lang.login.title}</h2>
         ${msg}
         <form action="login" class="form js-login-form">
-          <div class="nes-field">
+          <div class="form-field">
             <label for="user">${lang.login.user}</label>
-            <input type="text" id="user" data-validator="username" class="nes-input js-login-user"></div>
-          <div class="nes-field">
+            <input type="text" id="user" data-validator="username" class="js-login-user"></div>
+          <div class="form-field">
             <label for="pass">${lang.login.pass}</label>
-            <input type="password" id="pass" data-validator="password" class="nes-input js-login-pass"></div>
+            <input type="password" id="pass" data-validator="password" class="js-login-pass"></div>
           <br>
-          <button class="nes-btn is-primary">${lang.login.submit}</button>
-          <button class="nes-btn js-login-new">${lang.login.new}</button>
+          <button class="btn btn--principal">${lang.login.submit}</button>
+          <a class="btn float-right js-login-new">${lang.login.new}</a>
         </form>
       </section>
     `
 
-    $('.page').innerHTML = header + template
+    $('.page').innerHTML = header() + template
 
     $('.js-login-new').addEventListener('click', _printNewUser)
     $('.js-login-form').addEventListener('submit', _submitLogin)
@@ -45,7 +45,7 @@ export const login = () => {
         console.log(snapshot.val() === pass)
         if (snapshot.val() === pass) {
           window.sessionStorage.setItem('user', user)
-          page('/' + user)
+          page('/user/' + user)
         } else {
           _printLogin(lang.login.error)
         }
@@ -58,27 +58,27 @@ export const login = () => {
   const _printNewUser = (errorMsg) => {
     let msg = (typeof errorMsg === 'string') ? `<p class="nes-text is-error">${errorMsg}</p>` : ''
     const template = `
-      <section class="nes-container with-title">
+      <section class="content">
         <h2 class="title">${lang.login.new}</h2>
         ${msg}
         <form action="login" class="form js-login-formNew">
-          <div class="nes-field">
+          <div class="form-field">
             <label for="user">${lang.login.user}</label>
-            <input type="text" id="user" data-validator="username" class="nes-input js-login-user"></div>
-          <div class="nes-field">
+            <input type="text" id="user" data-validator="username" class="js-login-user"></div>
+          <div class="form-field">
             <label for="pass">${lang.login.pass}</label>
-            <input type="password" id="pass" data-validator="password" class="nes-input js-login-pass"></div>
-          <div class="nes-field">
+            <input type="password" id="pass" data-validator="password" class="js-login-pass"></div>
+          <div class="form-field">
             <label for="pass2">${lang.login.passRepeat}</label>
-            <input type="password" id="pass2" data-validator="password" class="nes-input js-login-pass2"></div>
+            <input type="password" id="pass2" data-validator="password" class="js-login-pass2"></div>
           <br>
-          <button class="nes-btn is-primary">${lang.login.submit}</button>
-          <button class="nes-btn js-login-exist">${lang.login.exist}</button>
+          <button class="btn btn--principal">${lang.login.submit}</button>
+          <button class="btn js-login-exist">${lang.login.exist}</button>
         </form>
       </section>
     `
 
-    $('.page').innerHTML = header + template
+    $('.page').innerHTML = header() + template
 
     $('.js-login-exist').addEventListener('click', _printLogin)
     $('.js-login-formNew').addEventListener('submit', _submitNewUser)
@@ -92,7 +92,6 @@ export const login = () => {
       let pass2 = $('.js-login-pass2').value
       if (pass === pass2) {
         database.ref('/users/' + user).on('value', function (snapshot) {
-          console.log(snapshot.val())
           if (snapshot.val() !== null) {
             if (snapshot.val().pass === pass) {
               window.sessionStorage.setItem('user', user)
@@ -130,4 +129,24 @@ export const login = () => {
   }
 
   _init()
+}
+
+export const isLogged = (user) => {
+  if (typeof user !== 'undefined') {
+    if (window.sessionStorage.getItem('user') === user) {
+      return true
+    } else if (window.sessionStorage.getItem('user') !== null) {
+      page('/user/' + window.sessionStorage.getItem('user'))
+      return false
+    } else {
+      page('/login')
+      return false
+    }
+  } else {
+    if (window.sessionStorage.getItem('user')) {
+      return true
+    } else {
+      return false
+    }
+  }
 }

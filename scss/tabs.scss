@@ -1,0 +1,33 @@
+.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: (-$outline_width);
+  z-index: 2;
+
+  .tab {
+    border: $outline_width solid $color_fg;
+    padding: 2vw 4vw;
+    flex-grow: 1;
+    margin: 0 ($outline_width*4);
+    box-shadow: $outline_width 0 0 0 $shadow-color;
+    cursor: pointer;
+
+    &--active {
+      border-bottom-color: $color_bg;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .tabs {
+    .tab {
+      padding: ($outline_width*5) ($outline_width*10);
+    }
+  }
+}

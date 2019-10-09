@@ -1,0 +1,7 @@
+h1 {
+  text-shadow: $outline_width $outline_width 0 $color_shadow;
+  a {
+    color: $color_fg;
+    text-decoration: none;
+  }
+}

@@ -1,6 +1,5 @@
 import { $ } from '../utils.js'
 import { lang } from '../config/lang.js'
-import { db } from '../config/db.js'
 import { header } from './_header.js'
 
 export const home = () => {
@@ -10,7 +9,16 @@ export const home = () => {
 
   const _printLayout = () => {
     let template = `
+      <h1><a href="/">${lang.title}</a></h1>
       <section>
+        <h1>Test H1</h1>
+        <h2>Test H2</h2>
+        <h3>Test H3</h3>
+        <h4>Test H4</h4>
+        <h5>Test H5</h5>
+        <h6>Test H6</h6>
+        <p>Test p</p>
+        <p>Test p</p>
         <h2>${lang.title}</h2>
         <a href="/dm">DM</a><br>
         <input type="text" placeholder="texto" class="js-input">
@@ -44,17 +52,7 @@ export const home = () => {
       </section>
     `
 
-    $('.page').innerHTML = header + template
-
-    $('.js-input').addEventListener('keyup', function () {
-      console.log(this.value)
-    })
-
-    let p = $('p', true)
-    p.forEach(element => {
-      element.innerHTML = 'Echo!!'
-    })
-    db.print('p', 'test')
+    $('.page').innerHTML = header() + template
   }
 
   _init()

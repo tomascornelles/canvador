@@ -1,0 +1,28 @@
+$shadow-width: $outline-width;
+$shadow-color:  rgba(0,0,0,.2);
+
+input[type=text],
+input[type=password] {
+  background: $color_bg;
+  display: block;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-family: 'Press Start 2P', cursive;
+  text-decoration: none; 
+  color: $color_fg;
+  border: $shadow-width solid $color_fg;
+  box-shadow: inset ($shadow-width) ($shadow-width) 0px 0px $shadow-color;
+  box-sizing: border-box;
+  outline: none;
+
+  &:focus {
+    border-color: $shadow-color;
+    outline: $shadow-width solid $color_fg;
+  }
+}
+.form-field {
+  margin-bottom: 1rem;
+}
