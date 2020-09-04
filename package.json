@@ -4,6 +4,6 @@
     "page": "^1.11.4"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.13.1"
   }
 }
